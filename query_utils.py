@@ -4,7 +4,7 @@ import re
 from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
 nltk.download('punkt')
-openai.api_key = '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'
+openai.api_key = ' '
 
 def preprocess_text(text):
     text = text.lower()
