@@ -5,3 +5,11 @@ nltk
 SnowballStemmer
 stopwords
 pandas
+docx2pdf
+pypdf2 
+chromadb 
+langchain 
+PyPDf2 
+docx2txt 
+openai 
+tiktoken
