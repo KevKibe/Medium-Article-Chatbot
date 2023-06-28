@@ -5,20 +5,19 @@ from nltk.corpus import stopwords
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
 
-nltk.download('stopwords')
-nltk.download('punkt')
 
 class ConversationChain:
     def __init__(self, openai_api_key):
         self.openai_api_key = openai_api_key
-        self.openai.api_key = openai_api_key
+        self.openai = ChatOpenAI(api_key=openai_api_key)
 
     def preprocess_text(self, text):
         text = text.lower()
-        text = re.sub(r'[^\w\s]|[\d]', '', text)
-        tokens = word_tokenize(text)
-        text = ' '.join(tokens)
+        
         return text
 
     def get_text_chunks(self, text):
@@ -41,7 +40,8 @@ class ConversationChain:
         memory = ConversationBufferMemory(
             memory_key='chat_history', return_messages=True)
         conversation_chain = ConversationalRetrievalChain.from_llm(
-            llm=llm,
+            llm= ChatOpenAI(api_key=self.openai_api_key)
+,
             retriever=vectorstore.as_retriever(),
             memory=memory
         )
