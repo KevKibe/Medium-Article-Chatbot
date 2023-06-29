@@ -2,12 +2,12 @@ beautifulsoup4
 requests
 openai
 nltk
-nltk_data
 SnowballStemmer
 stopwords
 pandas
 docx2pdf
 pypdf2 
+faiss-cpu
 chromadb 
 langchain 
 PyPDf2 
