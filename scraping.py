@@ -35,3 +35,10 @@ class ArticleFetcher:
     def get_articles(self):
         return self.articles
 
+urls= ['https://www.analyticsvidhya.com/blog/2021/08/how-to-code-your-resnet-from-scratch-in-tensorflow/']
+fetcher = ArticleFetcher(urls)
+
+fetcher.fetch_articles()
+
+articles = fetcher.get_articles()
+print(articles)
