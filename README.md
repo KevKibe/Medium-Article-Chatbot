@@ -20,6 +20,7 @@ The chatbot utilizes the OpenAI GPT-3.5 model and provides answers to user queri
   `OPENAI_API_KEY=your_api_key_here`
 
 ## Usage
+- Enter one or many medium article URLS in the variable `url=[ ]` in the `main.py` file
 - Run the application: `python main.py`
 - Enter your queries in the console prompt and press Enter.
 - The chatbot will process your query and provide an answer based on the content of the Medium articles.
