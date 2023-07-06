@@ -11,10 +11,10 @@ The chatbot utilizes the OpenAI GPT-3.5 model and provides answers to user queri
 
 ## Limitations
 - The chatbot's usage is limited to articles that are freely accessible on Medium. 
- Articles behind a paywall or requiring a subscription may not be accessible for fetching and processing.
+- Articles behind a paywall or requiring a subscription may not be accessible for fetching and processing.
 - The accuracy and relevance of the chatbot's answers depend on the quality and comprehensiveness of the article content.
 ## Installation
-- Clone the repository: `git clone https://github.com/yourusername/DocBot.git`
+- Clone the repository: `git clone https://github.com/KevKibe/Medium-Article-Chatbot.git`
 - Install dependencies: `pip install -r requirements.txt`
 - Set up environment variables: Create a `.env` file in the root directory of the project and add your OpenAI API key as follows:
   `OPENAI_API_KEY=your_api_key_here`
