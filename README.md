@@ -31,3 +31,5 @@ The application is deployed as a REST API using Flask through Docker image that 
 ## Contributions
 Contributions to the Medium Article Chatbot are welcome!
 If you find any issues or have suggestions for improvements, please feel free to open an issue and submit a pull request on the GitHub repository.
+
+**:zap: I'm currently open for roles in Data Science, Machine Learning, NLP and Computer Vision.**
