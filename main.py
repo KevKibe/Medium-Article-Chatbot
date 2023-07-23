@@ -58,8 +58,8 @@ class MediumArticleChatbot:
 
 if __name__ == '__main__':
     urls = [
-        'https://medium.com/@TechTalkWithAlex/creating-your-first-ever-recommendation-system-like-netflix-5a30e7c461a3',
-        'https://medium.com/gitconnected/different-approaches-for-building-recommender-systems-using-python-1bd2179fdc8a',
+        "https://medium.com/@ErincYigit/linkedin-authentication-and-fetching-user-data-from-api-b820835471c8",
+        
     ]
     chatbot = MediumArticleChatbot(urls)
     chatbot.setup()

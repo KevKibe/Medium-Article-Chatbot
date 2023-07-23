@@ -1,0 +1,4 @@
+/.venv
+.env
+__pycache__/query_utils.cpython-310.pyc
+test.pyc
