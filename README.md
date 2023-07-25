@@ -34,7 +34,7 @@ The application is deployed as a REST API using Flask through Docker image that 
 - Start up [Docker](https://docs.docker.com) and run `docker build -t dockerfile .`
 - run `docker run -e PORT=8080 dockerfile`
 - You can now get predictions from `http://<ec2-public-IP>:8080/predict`
-- 
+  
 ## Contributions
 Contributions to the Medium Article Chatbot are welcome!
 If you find any issues or have suggestions for improvements, please feel free to open an issue and submit a pull request on the GitHub repository.
