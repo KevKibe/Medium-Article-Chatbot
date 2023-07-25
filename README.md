@@ -27,7 +27,14 @@ The application is deployed as a REST API using Flask through Docker image that 
 - The chatbot will process your query and provide an answer based on the content of the Medium articles.
 - Continue the conversation by entering additional queries.
 - Exit the conversatio by entering command `q`
-
+- 
+## To deploy on an AWS EC2 instance
+- Setup an EC2 instance and SSH to the instance.Use this as a [guide](https://www.machinelearningplus.com/deployment/deploy-ml-model-aws-ec2-instance/).
+- Run  `git clone https://github.com/KevKibe/Medium-Article-Chatbot.git`
+- Start up [Docker](https://docs.docker.com) and run `docker build -t dockerfile .`
+- run `docker run -e PORT=8080 dockerfile`
+- You can now get predictions from `http://<ec2-public-IP>:8080/predict`
+- 
 ## Contributions
 Contributions to the Medium Article Chatbot are welcome!
 If you find any issues or have suggestions for improvements, please feel free to open an issue and submit a pull request on the GitHub repository.
