@@ -28,12 +28,10 @@ The application is deployed as a REST API using Flask containerized using Docker
 - Continue the conversation by entering additional queries.
 - Exit the conversatio by entering command `q`
 
+
 ## Deploying and Containerizing Your Application with Docker
 
-
 Before you start, make sure you have [Docker](https://www.docker.com/get-started) installed on your system. 
-
-## Access the Repository
 
 1. **Clone the Repository:** First, clone the repository for your application to your local machine or cloud instance using the following commands:
    ```sh
