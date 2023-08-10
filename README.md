@@ -1,7 +1,7 @@
 ## Medium Article Chatbot: Interacting with Articles from Medium Using Conversational AI
 This is an application that allows users to interact with one or many articles from Medium using conversational AI techniques.
 The chatbot utilizes the OpenAI GPT-3.5 model and provides answers to user queries based on the content of the Medium articles.
-The application is deployed as a REST API using Flask through Docker image that can run on Google Cloud Run or AWS ec2 instance.
+The application is deployed as a REST API using Flask containerized using Docker ready to be deployed Google Cloud Run or AWS ec2 instance.
 
 ## Features
 - Fetches one or many articles from Medium based on provided URLs
