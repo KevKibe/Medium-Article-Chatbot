@@ -1,7 +1,7 @@
 import requests
 
 # Replace this URL with the actual URL where your Flask API is running
-API_URL = 'http://127.0.0.1:5000/chat'
+API_URL = 'http://127.0.0.1:8080/chat'
 
 def test_chat_api():
     url = "https://medium.com/@ErincYigit/linkedin-authentication-and-fetching-user-data-from-api-b820835471c8"

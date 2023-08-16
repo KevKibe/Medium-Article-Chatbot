@@ -11,6 +11,7 @@ def chat():
     data = request.get_json()
     url = data.get('url')
     query = data.get('query')
+    chat_history = data.get('chat_history', [])
 
     if not url or not query:
         return jsonify({"error": "URL or query not provided"}), 400
@@ -18,10 +19,15 @@ def chat():
     chatbot = MediumArticleChatbot([url])
     chatbot.setup()
 
+    # Extend the chat history with the previous conversations
+    for question, answer in chat_history:
+        chatbot.chat_history.append((question, answer))
+
     result = chatbot.conversation_chain({"question": query, "chat_history": chatbot.chat_history})
     chatbot.chat_history.append((query, result["answer"]))
 
     return jsonify({"answer": result["answer"]})
+
 
 
 if __name__ == '__main__':
