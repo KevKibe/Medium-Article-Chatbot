@@ -8,7 +8,6 @@ pandas
 docx2pdf
 pypdf2 
 faiss-cpu
-chromadb 
 langchain 
 PyPDf2 
 docx2txt 
