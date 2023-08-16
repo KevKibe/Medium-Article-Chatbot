@@ -1,5 +1,4 @@
 beautifulsoup4
-requests
 openai
 nltk
 SnowballStemmer
@@ -8,7 +7,6 @@ pandas
 docx2pdf
 pypdf2 
 faiss-cpu
-chromadb 
 langchain 
 PyPDf2 
 docx2txt 
@@ -16,3 +14,4 @@ openai
 tiktoken
 flask
 streamlit
+dotenv
