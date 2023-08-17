@@ -15,17 +15,9 @@ def chat_api():
     if not url or not query:
         return jsonify({"error": "URL or query not provided"}), 400
 
-    # Instantiate the chatbot and set it up
     chatbot = MediumArticleChatbot([url])
     chatbot.setup()
-
-
-    # Generate response using the chatbot
     response = chatbot.generate_response(query)
-    # chatbot.chat_history.append((query, response))  # Update conversation history
-
-   
-
     return jsonify({"answer": response})
 
 
