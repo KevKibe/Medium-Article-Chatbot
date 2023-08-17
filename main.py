@@ -38,23 +38,14 @@ class MediumArticleChatbot:
         self.vectorstore = self.conversation.get_vectorstore(text_chunks)
         self.conversation_chain = self.conversation.get_conversation_chain(self.vectorstore)
 
-    def run(self):
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        white = "\033[0;39m"
-        print(f"{yellow}---------------------------------------------------------------------------------")
-        print('Start your chat-based interaction with your articles')
-        print('---------------------------------------------------------------------------------')
-        while True:
-            query = input(f"{green}Prompt: ")
-            if query == "exit" or query == "quit" or query == "q" or query == "f":
-                print('\033[32m' + 'Exiting')
-                sys.exit()
-            if query == '':
-                continue
-            result = self.conversation_chain({"question": query, "chat_history": self.chat_history})
-            print(f"{white}Answer: " + result["answer"])
-            self.chat_history.append((query, result["answer"]))
+    def generate_response(self, query,):
+        result = self.conversation_chain({"question": query, "chat_history": self.chat_history})
+        answer = result["answer"]
+        self.chat_history.append((query, answer))
+        return answer
+        
+
+
 
 if __name__ == '__main__':
     urls = [
@@ -62,5 +53,15 @@ if __name__ == '__main__':
         
     ]
     chatbot = MediumArticleChatbot(urls)
+    # query = 'what is the goal of the author'
+    # response = chatbot.generate_response(query)
     chatbot.setup()
-    chatbot.run()
+
+    while True:
+        query = input("Prompt: ")
+        if query.lower() in ["exit", "quit", "q", "f"]:
+            print("Exiting")
+            break
+
+        response = chatbot.generate_response(query)
+        print("Answer:", response)

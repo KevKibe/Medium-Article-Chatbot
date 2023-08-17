@@ -14,4 +14,4 @@ openai
 tiktoken
 flask
 streamlit
-dotenv
+python-dotenv

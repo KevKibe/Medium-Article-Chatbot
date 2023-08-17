@@ -7,27 +7,26 @@ app = Flask(__name__)
 load_dotenv('.env')
 
 @app.route('/chat', methods=['POST'])
-def chat():
+def chat_api():
     data = request.get_json()
     url = data.get('url')
     query = data.get('query')
-    chat_history = data.get('chat_history', [])
 
     if not url or not query:
         return jsonify({"error": "URL or query not provided"}), 400
 
+    # Instantiate the chatbot and set it up
     chatbot = MediumArticleChatbot([url])
     chatbot.setup()
 
-    # Extend the chat history with the previous conversations
-    for question, answer in chat_history:
-        chatbot.chat_history.append((question, answer))
 
-    result = chatbot.conversation_chain({"question": query, "chat_history": chatbot.chat_history})
-    chatbot.chat_history.append((query, result["answer"]))
+    # Generate response using the chatbot
+    response = chatbot.generate_response(query)
+    # chatbot.chat_history.append((query, response))  # Update conversation history
 
-    return jsonify({"answer": result["answer"]})
+   
 
+    return jsonify({"answer": response})
 
 
 if __name__ == '__main__':
