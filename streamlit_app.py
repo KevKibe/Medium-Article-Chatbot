@@ -19,13 +19,13 @@ def main():
             response_data = response.json()
             answer = response_data.get("answer")
             
-            st.text("Chatbot:")
+            st.text("Response:")
             st.info(answer)
             
             # Store the URL and query in conversation_data
             conversation_data.append(("User", initial_url))
             conversation_data.append(("User", query))
-            conversation_data.append(("Chatbot", answer))
+            conversation_data.append(("Response", answer))
 
     while True:
         query_count += 1
