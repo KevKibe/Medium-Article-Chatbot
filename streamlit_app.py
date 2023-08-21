@@ -11,11 +11,14 @@ import requests
 def main():
     st.title("Medium Article Chatbot")
 
-    url = st.text_input("Enter the URL of the Medium article:", key="url")
+    url = st.text_input("Enter the URL of the Medium article:")
+    query = st.text_input("Enter your query:")
 
-    while True:
-        query = st.text_input("Enter your query:", key="query")
+    # processor, model = download_model()
 
+    is_conversation_ongoing = True
+
+    while is_conversation_ongoing:
         if url and query:
             payload = {"url": url, "query": query}
             response = requests.post("http://54.216.44.96:8080/chat", json=payload)
@@ -24,8 +27,17 @@ def main():
                 response_data = response.json()
                 answer = response_data.get("answer")
                 st.write("Response:", answer)
+
+                # Check if the user wants to continue the conversation
+                button = st.button("Continue conversation")
+                if button:
+                    is_conversation_ongoing = True
+                else:
+                    is_conversation_ongoing = False
             else:
                 st.write("Error occurred while retrieving response from the API")
+        else:
+            st.write("Please enter the URL of the Medium article and your query.")
 
 if __name__ == "__main__":
     main()
