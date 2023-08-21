@@ -53,8 +53,7 @@ if __name__ == '__main__':
         
     ]
     chatbot = MediumArticleChatbot(urls)
-    # query = 'what is the goal of the author'
-    # response = chatbot.generate_response(query)
+
     chatbot.setup()
 
     while True:
