@@ -1,43 +1,53 @@
 import streamlit as st
 import requests
-# from transformers import AutoProcessor, BarkModel
-
-# @st.cache(allow_output_mutation=True)
-# def download_model():
-#     processor = AutoProcessor.from_pretrained("suno/bark")
-#     model = BarkModel.from_pretrained("suno/bark")
-#     return processor, model
 
 def main():
     st.title("Medium Article Chatbot")
 
-    url = st.text_input("Enter the URL of the Medium article:")
-    query = st.text_input("Enter your query:")
+    initial_url = st.text_input("Enter the URL of the Medium article:", key="initial_url")
+    query = st.text_input("Enter your query:", key="query")
 
-    # processor, model = download_model()
+    conversation_data = []  # Store conversation data including URL and queries
 
-    is_conversation_ongoing = True
+    query_count = 0  # Initialize a counter for query keys
 
-    while is_conversation_ongoing:
-        if url and query:
-            payload = {"url": url, "query": query}
+    if initial_url and query:
+        payload = {"url": initial_url, "query": query}
+        response = requests.post("http://54.216.44.96:8080/chat", json=payload)
+
+        if response.status_code == 200:
+            response_data = response.json()
+            answer = response_data.get("answer")
+            
+            st.text("Chatbot:")
+            st.info(answer)
+            
+            # Store the URL and query in conversation_data
+            conversation_data.append(("User", initial_url))
+            conversation_data.append(("User", query))
+            conversation_data.append(("Chatbot", answer))
+
+    while True:
+        query_count += 1
+        query_key = f"query_{query_count}"  # Generate a unique key for each query input
+
+        new_query = st.text_input("Enter your next query (or leave empty to end):", key=query_key)
+        if new_query:
+            payload = {"url": initial_url, "query": new_query}
             response = requests.post("http://54.216.44.96:8080/chat", json=payload)
 
             if response.status_code == 200:
                 response_data = response.json()
                 answer = response_data.get("answer")
-                st.write("Response:", answer)
-
-                # Check if the user wants to continue the conversation
-                button = st.button("Continue conversation")
-                if button:
-                    is_conversation_ongoing = True
-                else:
-                    is_conversation_ongoing = False
-            else:
-                st.write("Error occurred while retrieving response from the API")
+                
+                st.text("Response:")
+                st.info(answer)
+                
+                # Store the new query and response in conversation_data
+                conversation_data.append(("User", new_query))
+                conversation_data.append(("Response", answer))
         else:
-            st.write("Please enter the URL of the Medium article and your query.")
+            break
 
 if __name__ == "__main__":
     main()
