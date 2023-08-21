@@ -11,10 +11,10 @@ import requests
 def main():
     st.title("Medium Article Chatbot")
 
-    url = st.text_input("Enter the URL of the Medium article:")
+    url = st.text_input("Enter the URL of the Medium article:", key="url")
 
     while True:
-        query = st.text_input("Enter your query:")
+        query = st.text_input("Enter your query:", key="query")
 
         if url and query:
             payload = {"url": url, "query": query}
