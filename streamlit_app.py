@@ -34,7 +34,7 @@ def main():
         new_query = st.text_input("Enter your next query (or leave empty to end):", key=query_key)
         if new_query:
             payload = {"url": initial_url, "query": new_query}
-            response = requests.post("http://54.216.44.96:8080/chat", json=payload)
+            response = requests.post("http://34.247.253.159:8080/chat", json=payload)
 
             if response.status_code == 200:
                 response_data = response.json()
