@@ -13,7 +13,7 @@ def main():
 
     if initial_url and query:
         payload = {"url": initial_url, "query": query}
-        response = requests.post("http://54.216.44.96:8080/chat", json=payload)
+        response = requests.post("http://3.253.153.46:8080/chat", json=payload)
 
         if response.status_code == 200:
             response_data = response.json()
