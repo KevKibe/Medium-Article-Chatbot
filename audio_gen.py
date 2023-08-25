@@ -1,5 +1,5 @@
 from elevenlabs import generate, play, set_api_key
-set_api_key("2243a5e8cb3807de8854855f04f6ee4c")
+set_api_key(" ")
 
 
 
