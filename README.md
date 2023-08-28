@@ -15,7 +15,7 @@ The application is deployed as a REST API using Flask containerized using Docker
 - Articles behind a paywall or requiring a subscription may not be accessible for fetching and processing.
 - The accuracy and relevance of the chatbot's answers depend on the quality and comprehensiveness of the article content.
   
-## Using Voice to Query
+## Using Voice to Prompt
 - Speech recognition library for speech recognition and Elleven labs API for text to Speech.<br>
 - **Dont forget to unmute the video**
 
