@@ -14,6 +14,12 @@ The application is deployed as a REST API using Flask containerized using Docker
 - The chatbot's usage is limited to articles that are freely accessible on Medium. 
 - Articles behind a paywall or requiring a subscription may not be accessible for fetching and processing.
 - The accuracy and relevance of the chatbot's answers depend on the quality and comprehensiveness of the article content.
+  
+## Using Voice to Query
+- Speech recognition library for speech recognition and Elleven labs API for text to Speech.<br>
+
+https://github.com/KevKibe/Medium-Article-Chatbot/assets/86055894/4a45791f-1085-407b-903f-dda21652493b
+
 ## Installation
 - Clone the repository: `git clone https://github.com/KevKibe/Medium-Article-Chatbot.git`
 - Install dependencies: `pip install -r requirements.txt`
