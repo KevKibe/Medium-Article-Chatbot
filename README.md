@@ -18,6 +18,7 @@ The application is deployed as a REST API using Flask containerized using Docker
 ## Using Voice to Query
 - Speech recognition library for speech recognition and Elleven labs API for text to Speech.<br>
 
+https://github.com/KevKibe/Medium-Article-Chatbot/assets/86055894/2a24fea3-1d80-4851-af2f-338e11ba5b58
 
 ## Installation
 - Clone the repository: `git clone https://github.com/KevKibe/Medium-Article-Chatbot.git`
