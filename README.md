@@ -4,6 +4,7 @@ The chatbot utilizes the OpenAI GPT-3.5 model and provides answers to user queri
 The application is deployed as a REST API using Flask containerized using Docker ready to be deployed Google Cloud Run or AWS ec2 instance.
 ## Using Voice to Prompt
 - Speech recognition library for speech recognition and Elleven labs API for text to Speech.<br>
+- The two articles referred to in the video are: [article 1](https://medium.com/backenders-club/api-design-best-practices-a-deep-dive-2022-ec5a19dc27cc) and [article 2](https://medium.com/javarevisited/10-rest-api-best-practices-cd12e3904d00).
 - **Dont forget to unmute the video**
 
 https://github.com/KevKibe/Medium-Article-Chatbot/assets/86055894/2a24fea3-1d80-4851-af2f-338e11ba5b58
