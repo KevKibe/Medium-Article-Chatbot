@@ -70,7 +70,7 @@ Before you start, make sure you have [Docker](https://www.docker.com/get-started
   ```
 - You can now get predictions from
   ```
-  http://<ec2-public-IP>:8080/predict
+  http://<ec2-public-IP>:8080/chat
   ```
   
 ## Contributions
